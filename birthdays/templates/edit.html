@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+
+{% block body %}
+
+    <div class="container">
+            <div class="section">
+                <h2>Edit Birthday</h2>
+                <form action="/send-edit" method="post">
+                    <span>{{ name }}</span>
+                    <input name="id" type="hidden" value="{{ id }}">
+                    <input name="month" type="number" placeholder="Month">
+                    <input name="day" type="number" placeholder="Day">
+                    <input type="submit" value="Edit">
+                </form>
+            </div>
+            <div>
+                <p>{{ message }}</p>
+            </div>
+    </div>
+
+{% endblock %}
