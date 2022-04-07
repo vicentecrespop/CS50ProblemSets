@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            function answer(event)
+            {
+                    let option = event.srcElement
+                    let otherOptions = document.querySelectorAll('button[onclick="answer(event)"]')
+                    let div = document.querySelector("h3.first")
+                    if (option.innerHTML == 1281)
+                    {
+                        div.innerHTML = "<p>Correct!</p>"
+                        option.style.backgroundColor = "green";
+                        option.style.color = "white";
+                    }
+                    else
+                    {
+                        div.innerHTML = "<p>Incorrect</p>"
+                        option.style.backgroundColor = "red";
+                        option.style.color = "white";
+                    }
+                    for (items of otherOptions)
+                            {
+                                if (items != option)
+                                {
+                                    items.style.backgroundColor = "#d9edff";
+                                }
+                            }
+            }
+            function answer2(event)
+            {
+                let teste = event.srcElement
+                let answer = document.querySelector('input[type="text"]')
+                let div = document.querySelector("h3.second")
+                if (answer.value.toUpperCase() == "BRASILIA")
+                {
+                    div.innerHTML = "Correct!"
+                    answer.value = ""
+                    answer.focus()
+                }
+                else
+                {
+                    div.innerHTML = "Incorrect"
+                    answer.value = ""
+                    answer.focus()
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>How many goals did Pelé score in his professional carrer?</h3>
+                <h3 class="first"> </h3>
+                <p>
+                    <button onclick="answer(event)">1281</button>
+                    <button onclick="answer(event)">1103</button>
+                    <button onclick="answer(event)">935</button>
+                    <button onclick="answer(event)">802</button>
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <h3>What's the capital of Brazil?</h3>
+                <h3 class="second"> </h3>
+                <p>
+                    <input type="text" autofocus>
+                    <button onclick="answer2(event)">Check Answer</button>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

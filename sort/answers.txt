@@ -1,0 +1,11 @@
+sort1 uses: Bubble Sort
+
+How do you know?: It's the one with the lowest real time when executed with the sorted files.
+
+sort2 uses: Merge Sort
+
+How do you know?: It's the one with the lowest real time in general, when executed with any of the files.
+
+sort3 uses: Selection Sort
+
+How do you know?: It's the one with the highest real time in general, when executed with any of the files.
